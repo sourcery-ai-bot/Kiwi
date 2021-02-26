@@ -1,5 +1,6 @@
-function pre_process_data(data, callback) {
-    const runIds = [],
+// eslint-disable-next-line camelcase
+function pre_process_data (data, callback) {
+  const runIds = [],
           planIds = []
     data.forEach(function(element) {
         runIds.push(element.id)
@@ -50,6 +51,38 @@ $(document).ready(function() {
                 params['summary__icontains'] = $('#id_summary').val();
             }
 
+            if ($('#id_after_start_date').val()) {
+                params['after_start_date'] = $('#id_after_start_date').val();
+            }
+
+            if ($('#id_before_start_date').val()) {
+                params['after_stop_date'] = $('#id_before_start_date').val();
+            }
+
+            if ($('#id_after_stop_date').val()) {
+                params['after_stop_date'] = $('#id_after_stop_date').val();
+            }
+
+            if ($('#id_before_stop_date').val()) {
+                params['before_stop_date'] = $('#id_before_stop_date').val();
+            }
+
+            if ($('#id_after_planned_start').val()) {
+                params['planned_start'] = $('#id_after_planned_start').val();
+            }
+
+            if ($('#id_before_planned_start').val()) {
+                params['before_planned_start'] = $('#id_before_planned_start').val();
+            }
+
+            if ($('#id_after_planned_stop').val()) {
+                params['after_planned_stop'] = $('#id_after_planned_stop').val();
+            }
+
+            if ($('#id_before_planned_stop').val()) {
+                params['before_planned_stop'] = $('#id_before_planned_stop').val();
+            }
+
             if ($('#id_plan').val()) {
                 params['plan'] = $('#id_plan').val();
             }
@@ -69,9 +102,10 @@ $(document).ready(function() {
             if ($('#id_manager').val()) {
                 params['manager__username__startswith'] = $('#id_manager').val();
             };
+            console.log(params)
 
-            if ($('#id_default_tester').val()) {
-                params['default_tester__username__startswith'] = $('#id_default_tester').val();
+      if ($('#id_default_tester').val()) {
+        params['default_tester__username__startswith'] = $('#id_default_tester').val();
             };
 
             updateParamsToSearchTags('#id_tag', params);
@@ -90,7 +124,7 @@ $(document).ready(function() {
                         result += '<p class="help-block">' + data.stop_date + '</p>';
                     }
                     return result;
-                }
+        }
             },
             {
                 data: null,
