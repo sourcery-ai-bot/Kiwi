@@ -74,108 +74,32 @@
                 <input class="bootstrap-switch" id="id_running" name="running" type="checkbox" {% if form.running.value != "0" %}checked{% endif %} data-on-text="{% trans 'Yes' %}" data-off-text="{% trans 'No' %}">
             </div>
         </div>
-{#    TODO#}
+
+<!-- playing around with making these fields occupy less space on the screen -->
         <div class="form-group">
-            <label class="col-md-1 col-lg-1" for="id_after_start_date">{% trans "After start date" %}</label>
+            <label class="col-md-1 col-lg-1">{% trans "Start date" %}</label>
+
             <div class="col-md-3 col-lg-3">
                 <div class="input-group date-time-picker-pf">
-                    <input type="text" class="form-control" id="id_after_start_date">
-                    <span class="input-group-addon">
-                        <span class="fa fa-calendar"></span>
-                    </span>
-                </div>
-
-                {% include "include/datetimepicker_script.html" with selector="#id_after_start_date" %}
-            </div>
-
-            <label class="col-md-1 col-lg-1" for="id_before_start_date">{% trans "Before start date" %}</label>
-            <div class="col-md-3 col-lg-3">
-                <div class="input-group date-time-picker-pf">
+                    <span class="input-group-addon">{% trans "Before" %}</span>
+                    <label for="id_before_start_date"></label>
                     <input type="text" class="form-control" id="id_before_start_date">
                     <span class="input-group-addon">
                         <span class="fa fa-calendar"></span>
                     </span>
-                </div>
+                    {% include "include/datetimepicker_script.html" with selector="#id_before_start_date" %}
 
-                {% include "include/datetimepicker_script.html" with selector="#id_before_start_date" %}
+                    <span class="input-group-addon">{% trans "After" %}</span>
+                    <label for="id_after_start_date"></label>
+                    <input type="text" class="form-control" id="id_after_start_date">
+                    <span class="input-group-addon">
+                        <span class="fa fa-calendar"></span>
+                    </span>
+                    {% include "include/datetimepicker_script.html" with selector="#id_after_start_date" %}
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
-            <label class="col-md-1 col-lg-1" for="id_after_stop_date">{% trans "After stop date" %}</label>
-            <div class="col-md-3 col-lg-3">
-                <div class="input-group date-time-picker-pf">
-                    <input type="text" class="form-control" id="id_after_stop_date">
-                    <span class="input-group-addon">
-                        <span class="fa fa-calendar"></span>
-                    </span>
-                </div>
-
-                {% include "include/datetimepicker_script.html" with selector="#id_after_stop_date" %}
-            </div>
-
-            <label class="col-md-1 col-lg-1" for="id_before_stop_date">{% trans "Before stop date" %}</label>
-            <div class="col-md-3 col-lg-3">
-                <div class="input-group date-time-picker-pf">
-                    <input type="text" class="form-control" id="id_before_stop_date">
-                    <span class="input-group-addon">
-                        <span class="fa fa-calendar"></span>
-                    </span>
-                </div>
-
-                {% include "include/datetimepicker_script.html" with selector="#id_before_stop_date" %}
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-md-1 col-lg-1" for="id_after_planned_start">{% trans "After planned start" %}</label>
-            <div class="col-md-3 col-lg-3">
-                <div class="input-group date-time-picker-pf">
-                    <input type="text" class="form-control" id="id_after_planned_start">
-                    <span class="input-group-addon">
-                        <span class="fa fa-calendar"></span>
-                    </span>
-                </div>
-
-                {% include "include/datetimepicker_script.html" with selector="#id_after_planned_start" %}
-            </div>
-
-            <label class="col-md-1 col-lg-1" for="id_before_planned_start">{% trans "Before planned start" %}</label>
-            <div class="col-md-3 col-lg-3">
-                <div class="input-group date-time-picker-pf">
-                    <input type="text" class="form-control" id="id_before_planned_start">
-                    <span class="input-group-addon">
-                        <span class="fa fa-calendar"></span>
-                    </span>
-                </div>
-
-                {% include "include/datetimepicker_script.html" with selector="#id_before_planned_start" %}
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-md-1 col-lg-1" for="id_after_planned_stop">{% trans "After planned stop" %}</label>
-            <div class="col-md-3 col-lg-3">
-                <div class="input-group date-time-picker-pf">
-                    <input type="text" class="form-control" id="id_after_planned_stop">
-                    <span class="input-group-addon">
-                        <span class="fa fa-calendar"></span>
-                    </span>
-                </div>
-
-                {% include "include/datetimepicker_script.html" with selector="#id_after_planned_stop" %}
-            </div>
-
-            <label class="col-md-1 col-lg-1" for="id_before_planned_stop">{% trans "Before planned stop" %}</label>
-            <div class="col-md-3 col-lg-3">
-                <div class="input-group date-time-picker-pf">
-                    <input type="text" class="form-control" id="id_before_planned_stop">
-                    <span class="input-group-addon">
-                        <span class="fa fa-calendar"></span>
-                    </span>
-                </div>
-
-                {% include "include/datetimepicker_script.html" with selector="#id_before_planned_stop" %}
-            </div>
-        </div>
 
         <div class="form-group">
             <label class="col-md-1 col-lg-1" for="id_tag">{% trans "Tag" %}</label>
