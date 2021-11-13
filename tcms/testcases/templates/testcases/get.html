@@ -21,7 +21,7 @@
     </h1>
 
 <div class="row row-cards-pf">
-    <div class="col-xs-12 col-sm-12 col-md-9">
+    <div class="col-xs-12 col-sm-12 col-md-6">
         <div class="card-pf card-pf-accented">
             <div class="card-pf-body">
                 <div class="markdown-text">
@@ -32,6 +32,124 @@
                     <strong>{% trans 'Notes' %}:</strong>
                     {{ object.notes }}
                 </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-3">
+        <div class="card-pf card-pf-accented">
+            <h2 class="card-pf-title">
+                <span class="fa fa-cubes"></span>
+                {% trans "Properties" %}
+            </h2>
+
+            <div class="card-pf-body">
+                <div class="panel-group" id="properties-accordion">
+                    <div class="panel panel-no-border">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion-markup" href="#collapseOne"  class="collapsed">
+                                    Operating System
+                                </a>
+
+                                <a href="#" class="js-remove-property no-before" title="{% trans 'Delete' %}" style="float:right">
+                                    <span class="pficon-error-circle-o hidden-print"></span>
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="collapseOne" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <span class="badge property-value">
+                                    Windows
+                                    <a href="#" title="{% trans 'Delete' %}">
+                                        <span class="fa fa-times hidden-print"></span>
+                                    </a>
+                                </span>
+
+                                <span class="badge property-value">
+                                    Linux
+                                    <a href="#" title="{% trans 'Delete' %}">
+                                        <span class="fa fa-times hidden-print"></span>
+                                    </a>
+                                </span>
+
+                                <span class="badge property-value">
+                                    Mac OS
+                                    <a href="#" title="{% trans 'Delete' %}">
+                                        <span class="fa fa-times hidden-print"></span>
+                                    </a>
+                                </span>
+
+                                <span class="badge property-value">
+                                    Android
+                                    <a href="#" title="{% trans 'Delete' %}">
+                                        <span class="fa fa-times hidden-print"></span>
+                                    </a>
+                                </span>
+
+                                <span class="badge property-value">
+                                    Solaris
+                                    <a href="#" title="{% trans 'Delete' %}">
+                                        <span class="fa fa-times hidden-print"></span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="panel panel-no-border">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion-markup" href="#collapseTwo" class="collapsed">
+                                    Browser
+                                </a>
+
+                                <a href="#" class="js-remove-property no-before" title="{% trans 'Delete' %}" style="float:right">
+                                    <span class="pficon-error-circle-o hidden-print"></span>
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <span class="badge property-value">
+                                    Firefox
+                                    <a href="#" title="{% trans 'Delete' %}">
+                                        <span class="fa fa-times hidden-print"></span>
+                                    </a>
+                                </span>
+
+                                <span class="badge property-value">
+                                    Chrome
+                                    <a href="#" title="{% trans 'Delete' %}">
+                                        <span class="fa fa-times hidden-print"></span>
+                                    </a>
+                                </span>
+
+                                <span class="badge property-value">
+                                    Safari
+                                    <a href="#" title="{% trans 'Delete' %}">
+                                        <span class="fa fa-times hidden-print"></span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-no-border hidden-print">
+                        <div class="panel-heading">
+                            <input type="text" class="form-control typeahead" id="id_property"
+                                style="width: 80%; display: inline"
+                                maxlength="255">
+                            <a href="#" id="js-add-property" title="{% trans 'Add' %}" style="float:right">
+                                <span class="fa fa-plus hidden-print"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div> <!-- panel-group -->
             </div>
         </div>
     </div>
